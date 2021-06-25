@@ -1,0 +1,10 @@
+{
+  "nn": {
+    "darknet_bin": "./darknet",
+    "data_path": "cfg/coco.data",
+    "arch_path": "cfg/yolov3-tiny.cfg",
+    "weights_path": "data/my_data/my_yolo_tiny/yolov3-tiny.backup"
+  },
+  "images_path": "input_lists/images_big.list",
+  "res_path": "results/res.json"
+}
