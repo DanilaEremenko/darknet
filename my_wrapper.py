@@ -90,8 +90,11 @@ def main():
 
     box_results = get_boxes(**nn_cfg, images_path=images_path)
 
+    box_results_filt = {key: [box for box in box_list if box['class_name'] in ('fito', 'mosaic', 'weed')]
+                        for key, box_list in box_results.items()}
+
     with open(res_path, 'w') as fp:
-        json.dump(fp=fp, obj={'results_map': box_results})
+        json.dump(fp=fp, obj={'results_map': box_results_filt})
 
 
 if __name__ == '__main__':
